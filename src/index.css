@@ -1,0 +1,118 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-satoshi text-gray-800 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-satoshi font-black tracking-tight;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .hero-heading {
+    @apply text-[80px] sm:text-[100px] md:text-[140px] xl:text-[180px] font-black tracking-[-0.02em] leading-[0.9];
+  }
+
+  .hero-heading-top {
+    @apply block text-white font-black mb-2;
+  }
+
+  .hero-heading-bottom {
+    @apply block text-white font-black;
+  }
+
+  .hero-subtext {
+    @apply text-[20px] md:text-[24px] leading-[1.4] font-normal tracking-[-0.01em] text-white/90;
+  }
+
+  .nav-link {
+    @apply text-[18px] font-medium tracking-[-0.01em];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center font-medium transition-all duration-300 tracking-[-0.01em];
+  }
+
+  .btn-primary {
+    @apply btn bg-white text-[#0054a6] hover:bg-opacity-95 shadow-lg text-[18px] font-medium px-10 py-4 rounded-full;
+  }
+
+  .btn-outline {
+    @apply btn border border-white/30 text-white hover:bg-white/10 text-[18px] font-medium px-10 py-4 rounded-full;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    @apply backdrop-blur-lg bg-white/10 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-lg bg-gray-900/10 shadow-lg;
+  }
+
+  .glass-primary {
+    @apply backdrop-blur-lg bg-[#0054a6]/10 shadow-lg;
+  }
+
+  /* Luxury Effects */
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#0054a6] via-[#0066cc] to-[#3399ff];
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .border-gradient {
+    @apply border border-white/10 backdrop-blur-lg;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#0054a6]/50 rounded-full hover:bg-[#0054a6]/70 transition-colors duration-200;
+}
